@@ -2,4 +2,4 @@
 *.min.js linguist-language=JS
 *.css linguist-language=CSS
 *.min.css linguist-language=CSS
-*.htm linguist-language=HTM
+example/* -linguist-documentation
