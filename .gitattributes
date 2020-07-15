@@ -1,5 +1,5 @@
 *.js linguist-language=JS
-*.min.js linguist-language=JS
+*.min.js linguist-generated
 *.css linguist-language=CSS
-*.min.css linguist-language=CSS
-example/* -linguist-documentation
+*.min.css linguist-generated
+example/* linguist-documentation
