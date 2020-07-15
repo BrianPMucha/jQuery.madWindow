@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Mad-Window Example</title>
+		<link rel="stylesheet" href="styles/jQuery.madWindow.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"
+			integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+			crossorigin="anonymous"></script>
+		<script src="scripts/jQuery.madWindow.min.js"></script>
+	</head>
+
+	<body>
+
+		<h1>jQuery.madWindow.js</h1>
+		<p>This lightweight (8.47k) plugin provides robust messaging windows for alerts, dialogs, lightboxes and more. It includes an assortment of <em>behaviors</em> to control the open, display and close functionality, and extensable <em>themes</em> to change the appearance.</p>
+		<p>The content can be passed for simple message windows, or madWindow can be bound to an existing DIV for complex lightboxes, videos, or web-forms.</p>
+
+		<h2>Demos</h2>
+		<div>
+
+			<!--// Example_0 //-->
+			<div>
+
+				<p>
+					<span id="example_window_link_0">Simple Message</span><br>
+					Default options
+				</p>
+
+				<script>
+					jQuery(document).ready(function ($) {
+
+						$("#example_window_link_0").click(function () {
+							$(window).madWindow("open",
+							{
+								messageTitle: "Aenean nec turpis neque.",
+								messageContent: "Aliquam a enim felis. Mauris eleifend ipsum vel felis suscipit et rhoncus turpis tristique."
+							});
+						});
+
+					});
+				</script>
+
+			</div>
+
+			<!--// Example_1 //-->
+			<div>
+
+				<p>
+					<span id="example_window_link_1">Simple Message with Behavior</span><br>
+					Behavior: bottomCenter
+				</p>
+
+				<script>
+					jQuery(document).ready(function ($) {
+
+						$("#example_window_link_1").click(function () {
+							$(window).madWindow("open",
+							{
+								messageTitle: "Aenean nec turpis neque.",
+								messageContent: "Aliquam a enim felis. Mauris eleifend ipsum vel felis suscipit et rhoncus turpis tristique.",
+								messageButtonShow: true,
+								behavior: "bottomCenter"
+							});
+						});
+
+					});
+				</script>
+
+			</div>
+
+			<!--// Example_2 //-->
+			<div>
+
+				<p>
+					<span id="example_window_link_2">Message with Theme and Behavior</span><br>
+					 Theme: Alert, Behavior: topRight, Close-Timeout: 5 sec.
+				</p>
+
+				<script>
+					jQuery(document).ready(function ($) {
+
+						$("#example_window_link_2").click(function () {
+							$(window).madWindow("open",
+							{
+								messageTitle: "Aenean nec turpis neque.",
+								messageContent: "Aliquam a enim felis. Mauris eleifend ipsum vel felis suscipit et rhoncus turpis tristique.",
+								theme: "alert hanging-close",
+								behavior: "topRight",
+								closeTimeout: 5,
+								width: 400
+							});
+						});
+
+					});
+				</script>
+
+			</div>
+
+			<!--// Example_3 //-->
+			<div>
+
+				<p>
+					<span id="example_window_link_3">Message with Theme and Behavior</span><br>
+					 Theme: Error, Behavior: topLeft, Close-Timeout: 5 sec.
+				</p>
+
+				<script>
+					jQuery(document).ready(function ($) {
+
+						$("#example_window_link_3").click(function () {
+							$(window).madWindow("open",
+							{
+								messageTitle: "Aenean nec turpis neque.",
+								messageContent: "Aliquam a enim felis. Mauris eleifend ipsum vel felis suscipit et rhoncus turpis tristique.",
+								theme: "error hanging-close",
+								behavior: "topLeft",
+								closeTimeout: 5,
+								width: 400
+							});
+						});
+
+					});
+				</script>
+
+			</div>
+
+			<!--// Example_4 //-->
+			<div>
+
+				<p>
+					<span id="example_window_link_4">Message with Theme and Behavior</span><br>
+					Theme: Info, Behavior: bottomRight, Close-Timeout: 5 sec.
+				</p>
+
+				<script>
+					jQuery(document).ready(function ($) {
+
+						$("#example_window_link_4").click(function () {
+							$(window).madWindow("open",
+							{
+								messageTitle: "Aenean nec turpis neque.",
+								messageContent: "Aliquam a enim felis. Mauris eleifend ipsum vel felis suscipit et rhoncus turpis tristique.",
+								theme: "info hanging-close",
+								behavior: "bottomRight",
+								closeTimeout: 5,
+								width: 400
+							});
+						});
+
+					});
+				</script>
+
+			</div>
+
+			<!--// Example_5 //-->
+			<div>
+
+				<p>
+					<span id="example_window_link_5">Bound Content with Theme and Behavior</span><br>
+					Theme: Confirm, Behavior: bottomCenter
+				</p>
+
+				<div id="myWindow_5" class="mad-window" style="display: none">
+					<div class="container">
+							<div class="mad-window-title">Aenean nec turpis neque.</div>
+							<div class="mad-window-content">
+								<p>Aliquam a enim felis. Mauris eleifend ipsum vel felis suscipit et rhoncus turpis tristique.</p>
+								<div class="mad-window-actionButton">Accept</div>
+								<div class="mad-window-cancelButton">No Thanks</div>
+							</div>
+					</div>
+				</div>
+
+				<script>
+					jQuery(document).ready(function ($) {
+
+						$("#example_window_link_5").click(function () {
+							$("#myWindow_5").madWindow("open",
+							{
+								theme: "confirm",
+								behavior: "bottomCenter",
+								width: 600
+							});
+						});
+
+					});
+				</script>
+
+			</div>
+
+			<!--// Example_6 //-->
+			<div>
+
+				<p>
+					<span id="example_window_link_6">Bound Content with Theme and Behavior</span><br>
+					Theme: Default with local 'web-form' styles and scripts, Behavior: autoCenter, Modal with scrolling disabled.
+				</p>
+
+				<div id="myWindow_6" class="mad-window" style="display: none">
+					<div class="mad-window-closebox"></div>
+					<div class="container">
+						<p>Aliquam a enim felis. Mauris eleifend ipsum vel felis suscipit et rhoncus turpis tristique.</p>
+						<form id="my_cool_form">
+							<div class="row">
+								<label>Field One</label>
+								<input type="text" />
+							</div>
+							<div class="row">
+								<label>Field Two</label>
+								<input type="text" />
+							</div>
+							<div class="row">
+								<textarea></textarea>
+							</div>
+							<div class="row">
+								<div class="mad-window-actionButton">Submit</div>
+								<div class="mad-window-cancelButton">Cancel</div>
+							</div>
+						</form>
+					</div>
+				</div>
+
+				<style>
+					#myWindow_6.mad-window
+					{
+						padding: 10px;
+					}
+					#myWindow_6.mad-window .row
+					{
+						margin: 10px 0;
+					}
+					#myWindow_6.mad-window textarea
+					{
+						width: 100%;
+						height: 120px;
+					}
+				</style>
+
+				<script>
+					jQuery(document).ready(function ($) {
+
+						$("#example_window_link_6").click(function () {
+							$("#myWindow_6").madWindow("open",
+							{
+								theme: "default hanging-close",
+								behavior: "autoCenter",
+								modal: true,
+								disableScroll: true
+							});
+						});
+
+						$("#myWindow_6 .mad-window-actionButton").click(function () {
+		 					// Submit the form or call an API, etc.
+		 					$("#myWindow_6").madWindow("close");
+		 				});
+
+					});
+				</script>
+
+			</div>
+
+			<!--// Example_7 //-->
+			<div>
+
+				<p>
+					<span id="example_window_link_7">Bound Content with Theme and Behavior</span><br>
+					Theme: Default with local 'lightbox' styles and scripts, Behavior: autoCenter, Modal with scrolling disabled, ExpireDays: 30, Callbacks: GA Event Tracking.<br>
+					(Note: <span class="link" onclick="clearCookie();">Clear the cookie</span> to reopen the dismissed window.)
+				</p>
+
+				<div id="myWindow_7" class="mad-window" style="display: none">
+					<div class="mad-window-closebox"></div>
+					<div class="container">
+						<div class="row">
+							<p class="headline">Aenean nec turpis neque.</p>
+							<p>Aliquam a enim felis. Mauris eleifend ipsum vel felis suscipit et rhoncus turpis tristique.</p>
+							<div class="mad-window-actionButton">Call to Action</div>
+						</div>
+					</div>
+				</div>
+
+				<style>
+					#myWindow_7.mad-window p
+					{
+						font-size: 1em;
+						margin: 0 30% 25px 10px;
+					}
+					#myWindow_7.mad-window p.headline
+					{
+						font-size: 2.5em;
+						font-weight: bold;
+						line-height: .9;
+						margin: 0 10px 10px 10px;
+					}
+				</style>
+
+				<script>
+					jQuery(document).ready(function ($) {
+
+						$("#example_window_link_7").click(function () {
+							$("#myWindow_7").madWindow("open",
+							{
+								theme: "default hanging-close",
+								behavior: "autoCenter",
+								cookieName: "mad-cookie_7",
+								expireDays: 30,
+								width: 600,
+								closePadding: 15,
+								modal: true,
+								disableScroll: true,
+								openCallback: function pushWindowOpened () { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ 'event': 'Window_Open', 'id': 'myWindow_7' }); },
+								closeCallback: function pushWindowClosed () { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ 'event': 'Window_Close', 'id': 'myWindow_7' }); }
+							});
+						});
+
+						$("#myWindow_7 .mad-window-actionButton").click(function () {
+		 					window.dataLayer = window.dataLayer || []; window.dataLayer.push({ 'event': 'Window_Click', 'id': 'myWindow_7' });
+		 					// Navigate to another page, perform some call-to-action, etc.
+		 					$("#myWindow_6").madWindow("close");
+						});
+
+					});
+				</script>
+
+			</div>
+
+		</div>
+
+		<h2>Configuration Example</h2>
+		<div>
+			<div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+<pre style="margin: 0; font-size: 1.6rem; line-height: 125%">
+
+		&lt;script&gt;
+
+			jQuery(document).ready(<span style="color: #0000ff">function</span> ($) {
+
+				<span style="color: #a31515">&#39;use strict&#39;</span>;
+
+				<span style="color: #138f30">/* Pass content using notice options. */</span>
+				$(<span style="color: #a31515">window</span>).madWindow(<span style="color: #a31515">&quot;open&quot;</span>,
+				{
+					messageTitle: <span style="color: #a31515">&quot;Aenean nec turpis neque.&quot;</span>,
+					messageContent: <span style="color: #a31515">&quot;Aliquam a enim felis. Mauris eleifend ipsum vel felis suscipit et rhoncus turpis tristique.&quot;</span>
+				});
+			}
+
+		&lt;/script&gt;
+
+	&lt;/body&gt;
+&lt;/html&gt;
+
+</pre>
+			</div>
+			<br/>
+			<div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+<pre style="margin: 0; font-size: 1.6rem; line-height: 125%">
+
+		&lt;div id=<span style="color: #a31515">&quot;myWindow_1&quot;</span> class=<span style="color: #a31515">&quot;mad-window&quot;</span> style=<span style="color: #a31515">&quot;display: none&quot;</span>&gt;
+			&lt;div class=<span style="color: #a31515">&quot;mad-window-closebox&quot;</span>&gt;&lt;/div&gt;
+			&lt;div class=<span style="color: #a31515">&quot;container&quot;</span>&gt;
+				&lt;div class=<span style="color: #a31515">&quot;row&quot;</span>&gt;
+					&lt;p class=<span style="color: #a31515">&quot;headline&quot;</span>&gt;Aenean nec turpis neque.&lt;/p&gt;
+					&lt;p&gt;Aliquam a enim felis. Mauris eleifend ipsum vel felis suscipit et rhoncus turpis tristique.&lt;/p&gt;
+					&lt;div class=<span style="color: #a31515">&quot;mad-window-actionButton&quot;</span>&gt;Call to Action&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+
+		&lt;link rel=<span style="color: #a31515">&quot;stylesheet&quot;</span> href=<span style="color: #a31515">&quot;jquery.madWindow.css&quot;</span>&gt;
+		&lt;script src=<span style="color: #a31515">&quot;scripts/jquery.madWindow.js&quot;</span>&gt;&lt;/script&gt;
+
+		&lt;script&gt;
+
+			jQuery(document).ready(<span style="color: #0000ff">function</span> ($) {
+
+				<span style="color: #a31515">&#39;use strict&#39;</span>;
+
+				<span style="color: #138f30">/* Bind to An existing DIV for content. */</span>
+				$(<span style="color: #a31515">&quot;#myWindow_1&quot;</span>).madWindow(<span style="color: #a31515">&quot;open&quot;</span>,
+				{
+					theme: <span style="color: #a31515">&quot;default hanging-close&quot;</span>,
+					behavior: <span style="color: #a31515">&quot;autoCenter&quot;</span>,
+					cookieName: <span style="color: #a31515">&quot;mad-cookie&quot;</span>,
+					expireDays: 30,
+					width: 600,
+					closePadding: 15,
+					modal: <span style="color: #0000ff">true</span>,
+					openDelay: 5
+				});
+			}
+
+		&lt;/script&gt;
+
+	&lt;/body&gt;
+&lt;/html&gt;
+
+</pre>
+			</div>
+		</div>
+
+		<h2>Options</h2>
+		<div>
+
+			<p class="option">messageTitle: null</p>
+			<p>The title text to display when not bound to an existing div.</p>
+
+			<p class="option">messageContent: null</p>
+			<p>The message text to display when not bound to an existing div.</p>
+
+			<p class="option">messageButtonShow: false</p>
+			<p>Whether to add a close button when not bound to an existing div.</p>
+
+			<p class="option">messageButtonLabel: "Ok"</p>
+			<p>The value of the close button when not bound to an existing div.</p>
+
+			<p class="option">theme: "default"</p>
+			<p>Premade packages to customize the look and feel of the window.</p>
+
+			<p class="option">behavior: "autoCenter"</p>
+			<p>Used to customize the open, display and close animations.</p>
+
+			<p class="option">cookieName: "mad-cookie"</p>
+			<p>The identifier used for the cookie used to record a dismissed window.</p>
+
+			<p class="option">expireDays: 0</p>
+			<p>The number of days that the dismissed window cookie persists.</p>
+
+			<p class="option">width: 400</p>
+			<p>The maximum width of the notice.</p>
+
+			<p class="option">closePadding: 0</p>
+			<p>Extra space left of the notice to accomodate a hanging closebox.</p>
+
+			<p class="option">speed: 500</p>
+			<p>Number of miliseconds for the open and close animations.</p>
+
+			<p class="option">modal: false</p>
+			<p>Show a dark overlay under the notice and over the page.</p>
+
+			<p class="option">modalClose: true</p>
+			<p>Allow clicks on the background to close the notice.</p>
+
+			<p class="option">modalSpeed: 250</p>
+			<p>Number of miliseconds for the modal overlay animation.</p>
+
+			<p class="option">disableScroll: false</p>
+			<p>Disable scrolling of the page under the notice.</p>
+
+			<p class="option">disableMethod: "auto"</p>
+			<p>The method used to disable scrolling.</p>
+
+			<p class="option">openDelay: 0</p>
+			<p>Number of seconds to delay opening the notice.</p>
+
+			<p class="option">closeTimeout: 0</p>
+			<p>Number of seconds until an open notice closes itself.</p>
+
+			<p class="option">openCallback: function() {}</p>
+			<p>A function to execute upon notice open.</p>
+
+			<p class="option">closeCallback: function() {}</p>
+			<p>A function to execute upon notice close.
+
+		</div>
+
+		<p style="margin-top: 100px; border-top: 1px solid #000; padding-top: 5px">Copyright &copy; 2020 - Brian P. Mucha</p>
+
+		<style>
+
+			html, body 
+			{
+				font-family: Arial, Helvetica, Sans-Serif;
+				font-size: 10px;
+			}
+			h2 { font-size: 1.6rem; margin: 30px 0; }
+			p { font-size: 1.6rem; margin-top: 0; }
+			p span { color: #0000ff; cursor: pointer; text-decoration: underline; }
+			p.option { font-weight: bold; margin: 0; }
+
+		</style>
+
+		<script>
+			function clearCookie()
+			{
+				document.cookie='mad-cookie_7=Hide; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/'
+				$(window).madWindow("open",
+				{
+					messageTitle: "Cookie Cleared!",
+					messageContent: "The dismissed-window cookie has been cleared.",
+					theme: "info no-close",
+					behavior: "bottomRight",
+					closeTimeout: 3
+				});
+			}
+		</script>
+
+	</body>
+
+</html>
