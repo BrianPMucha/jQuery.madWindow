@@ -1,4 +1,4 @@
-# jQuery.madWindow.js
+# jQuery.madWindow
 
 This lightweight (8.47k) plugin provides robust messaging windows for alerts, dialogs, lightboxes and more. It includes an assortment of behaviors to control the open, display and close functionality, and extensable themes to change the appearance.
 
