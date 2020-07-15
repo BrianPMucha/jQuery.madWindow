@@ -1,5 +1,5 @@
-*.htm linguist-language=JS
 *.js linguist-language=JS
 *.min.js linguist-language=JS
 *.css linguist-language=CSS
 *.min.css linguist-language=CSS
+*.htm linguist-language=HTM
