@@ -173,7 +173,6 @@
 							</div>
 					</div>
 				</div>
-
 				<script>
 					jQuery(document).ready(function ($) {
 
@@ -185,7 +184,10 @@
 								width: 600
 							});
 						});
-
+						$("#myWindow_5 .mad-window-actionButton").click(function () {
+		 					// Call an API, etc.
+		 					$("#myWindow_5").madWindow("close");
+						});
 					});
 				</script>
 
@@ -319,7 +321,7 @@
 						$("#myWindow_7 .mad-window-actionButton").click(function () {
 		 					window.dataLayer = window.dataLayer || []; window.dataLayer.push({ 'event': 'Window_Click', 'id': 'myWindow_7' });
 		 					// Navigate to another page, perform some call-to-action, etc.
-		 					$("#myWindow_6").madWindow("close");
+		 					$("#myWindow_7").madWindow("close");
 						});
 
 					});
