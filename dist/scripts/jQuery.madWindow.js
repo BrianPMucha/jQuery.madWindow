@@ -2,8 +2,8 @@
 *
 *	jQuery.madWindow
 *	----------------------
-*	version: 1.0.0
-*	date: 2020/07/15
+*	version: 1.0.1
+*	date: 2020/07/17
 *	license: GPL-3.0-or-later
 *	copyright (C) 2020 Brian Patrick Mucha
 *
@@ -130,7 +130,7 @@
 						useButton = "<input value=\"" + settings.messageButtonLabel + "\" title=\"" + settings.useButton + "\" type=\"button\" class=\"mad-window-closeButton\" />";
 					}
 					var windowHTML =
-					"<div class=\"container\">" +
+					"<div class=\"mad-window-container\">" +
 						"<div class=\"mad-window-title\">" + settings.messageTitle + "</div>" +
 						"<div class=\"mad-window-closebox\"></div>" +
 						"<div class=\"mad-window-content\">" + settings.messageContent + "</div>" +
