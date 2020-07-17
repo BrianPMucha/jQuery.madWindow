@@ -2,8 +2,8 @@
 *
 *	jQuery.madWindow
 *	----------------------
-*	version: 1.0.0
-*	date: 2020/07/15
+*	version: 1.0.1
+*	date: 2020/07/17
 *	license: GPL-3.0-or-later
 *	copyright (C) 2020 Brian Patrick Mucha
 *
@@ -236,7 +236,7 @@
 	min-height: 70px;
 }
 
-.mad-window.alert .container:before {
+.mad-window.alert .mad-window-mad-window-container:before {
 	display: block;
 	position: absolute;
 	left: 10px;
@@ -249,7 +249,7 @@
 	width: 60px;
 }
 
-.mad-window.alert .container {
+.mad-window.alert .mad-window-container {
 	margin-left: 85px;
 }
 
@@ -273,7 +273,7 @@
 	min-height: 70px;
 }
 
-.mad-window.info .container:before {
+.mad-window.info .mad-window-container:before {
 	display: block;
 	position: absolute;
 	left: 10px;
@@ -286,7 +286,7 @@
 	width: 760px;
 }
 
-.mad-window.info .container {
+.mad-window.info .mad-window-container {
 	margin-left: 85px;
 }
 
@@ -310,7 +310,7 @@
 	min-height: 70px;
 }
 
-.mad-window.error .container:before {
+.mad-window.error .mad-window-container:before {
 	display: block;
 	position: absolute;
 	left: 10px;
@@ -323,7 +323,7 @@
 	width: 760px;
 }
 
-.mad-window.error .container {
+.mad-window.error .mad-window-container {
 	margin-left: 85px;
 }
 
@@ -347,7 +347,7 @@
 	min-height: 70px;
 }
 
-.mad-window.confirm .container:before {
+.mad-window.confirm .mad-window-container:before {
 	display: block;
 	position: absolute;
 	left: 10px;
@@ -360,7 +360,7 @@
 	width: 760px;
 }
 
-.mad-window.confirm .container {
+.mad-window.confirm .mad-window-container {
 	margin-left: 85px;
 }
 
