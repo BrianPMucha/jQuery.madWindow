@@ -2,8 +2,8 @@
 *
 *	jQuery.madWindow
 *	----------------------
-*	version: 1.0.1
-*	date: 2020/07/17
+*	version: 1.0.2
+*	date: 2021/05/11
 *	license: GPL-3.0-or-later
 *	copyright (C) 2020 Brian Patrick Mucha
 *
@@ -163,11 +163,11 @@
 				$(windowObj).data("settings", settings);
 
 				// Open the window.
-				var shouldHide = utilities.readCookie(settings.cookieName);
-				if (shouldHide !="Hide")
+				var shouldHide = utilities.readCookie( settings.cookieName );
+				if (shouldHide != "Hide")
 				{
 					var noticeTimer = $.isNumeric(settings.openDelay) ? settings.openDelay : 0;
-					setTimeout(function(){ handlers.doOpen(windowObj, settings) }, noticeTimer * 1000);
+					setTimeout(function(){ handlers.doOpen(windowObj) }, noticeTimer * 1000);
 				}
 
 			});
@@ -177,10 +177,7 @@
 			return this.each(function ()
 			{
 
-				// Retrieve settings
-				settings = $(this).data("settings");
-
-				handlers.doClose(this, settings);
+					handlers.doClose(this);
 
 			});
 		}
@@ -189,7 +186,10 @@
 
 	var handlers = {
 
-		doOpen: function (windowObj, settings) {
+		doOpen: function (windowObj) {
+
+			// Retrieve settings
+			settings = $(windowObj).data("settings");
 
 			// Build the notice.
 			if (windowObj)
@@ -267,7 +267,10 @@
 
 		},
 
-		doClose: function(windowObj, settings) {
+		doClose: function(windowObj) {
+
+			// Retrieve settings
+			settings = $(windowObj).data("settings");
 
 			// Execute the close behavior.
 			switch (settings.behavior)
@@ -382,8 +385,8 @@
 		autoCenter: function (operation, windowObj, callback) {
 
 			$(windowObj).css("width", utilities.setWidth(settings));
-			var noticeTop = ( ($(window).height() - $(windowObj).outerHeight()) / 2) + $(window).scrollTop();
-			var noticeLeft = ( ($(window).width() - $(windowObj).outerWidth()) / 2) + $(window).scrollLeft()
+			var noticeTop = ( ($(window).height() - $(windowObj).outerHeight()) / 2);
+			var noticeLeft = ( ($(window).width() - $(windowObj).outerWidth()) / 2);
 
 			switch (operation)
 			{
@@ -393,7 +396,7 @@
 					$(windowObj)
 						.stop()
 						.css("display", "none")
-						.css("position", "absolute")
+						.css("position", "fixed")
 						.css("top", noticeTop)
 						.css("left", noticeLeft - (settings.closePadding/2) )
 						.fadeIn(settings.speed, callback);
@@ -424,7 +427,7 @@
 
 			$(windowObj).css("width", utilities.setWidth(settings));
 			var noticeBottom = ( $(windowObj).outerHeight() + 30 ) * -1;
-			var noticeLeft = ( ($(window).width() - $(windowObj).outerWidth()) / 2) + $(window).scrollLeft();
+			var noticeLeft = ( ($(window).width() - $(windowObj).outerWidth()) / 2);
 
 			switch (operation)
 			{
@@ -661,12 +664,12 @@
 		{
 			if (days) {
 				var date = new Date();
-				date.setTime(date.getTime()+(days*24*60*60*1000));
-				var expires = "; expires="+date.toGMTString();
+				date.setTime(date.getTime() + (days*24*60*60*1000));
+				var expires = "; expires=" + date.toGMTString();
 			} else {
 				var expires = "";
 			}
-			document.cookie = name+"="+value+expires+"; path=/";
+			document.cookie = name + "=" + value + expires + "; SameSite=Lax; path=/";
 		},
 
 		readCookie: function(name)
