@@ -15,7 +15,7 @@
 	<body>
 
 		<h1>jQuery.madWindow</h1>
-		<p>This lightweight (8.32 KB) plugin provides robust messaging windows for alerts, dialogs, lightboxes and more. It includes an assortment of <em>behaviors</em> to control the open, display and close functionality, and extensible <em>themes</em> to change the appearance.</p>
+		<p>This lightweight (8.465 KB) plugin provides robust messaging windows for alerts, dialogs, lightboxes and more. It includes an assortment of <em>behaviors</em> to control the open, display and close functionality, and extensible <em>themes</em> to change the appearance.</p>
 		<p>The content can be passed for simple message windows, or madWindow can be bound to an existing DIV for complex lightboxes, videos, or web-forms.</p>
 		<p>Download at <a href="https://github.com/BrianPMucha/jQuery.madWindow">GitHub</a>.</p>
 
@@ -272,7 +272,7 @@
 				<p>
 					<span id="example_window_link_7">Bound Content with Theme and Behavior</span><br>
 					Theme: Default with local 'lightbox' styles and scripts, Behavior: autoCenter, Modal with scrolling disabled, ExpireDays: 30, Callbacks: GA Event Tracking.<br>
-					(Note: <span class="link" onclick="clearCookie();">Clear the cookie</span> to reopen the dismissed window.)
+					(Note: <span class="link" onclick="clearCookie('mad-cookie_7');">Clear the cookie</span> to reopen the dismissed window.)
 				</p>
 
 				<div id="myWindow_7" class="mad-window" style="display: none">
@@ -324,6 +324,134 @@
 							window.dataLayer = window.dataLayer || []; window.dataLayer.push({ 'event': 'Window_Click', 'id': 'myWindow_7' });
 							// Navigate to another page, perform some call-to-action, etc.
 							$("#myWindow_7").madWindow("close");
+						});
+
+					});
+				</script>
+
+			</div>
+
+			<!--// Example_8 //-->
+			<div>
+
+				<p>
+					<b>Bound Content with 3s Open Delay and Behavior</b><br>
+					Theme: Default with local 'lightbox' styles and scripts, Behavior: autoCenter, Modal with scrolling disabled, ExpireDays: 30, Callbacks: GA Event Tracking.<br>
+					(Note: <span class="link" onclick="clearCookie('mad-cookie_8');">Clear the cookie</span> to reopen the dismissed window.)
+				</p>
+
+				<div id="myWindow_8" class="mad-window" style="display: none">
+					<div class="mad-window-closebox"></div>
+					<div class="container">
+						<div class="row">
+							<p class="headline">Aenean nec turpis neque.</p>
+							<p>Aliquam a enim felis. Mauris eleifend ipsum vel felis suscipit et rhoncus turpis tristique.</p>
+							<div class="mad-window-actionButton">Call to Action</div>
+						</div>
+					</div>
+				</div>
+
+				<style>
+					#myWindow_8.mad-window p
+					{
+						font-size: 1em;
+						margin: 0 30% 25px 10px;
+					}
+					#myWindow_8.mad-window p.headline
+					{
+						font-size: 2.5em;
+						font-weight: bold;
+						line-height: .9;
+						margin: 0 10px 10px 10px;
+					}
+				</style>
+
+				<script>
+					jQuery(document).ready(function ($) {
+
+						$("#myWindow_8").madWindow("open",
+						{
+							theme: "default hanging-close",
+							behavior: "autoCenter",
+							cookieName: "mad-cookie_8",
+							expireDays: 30,
+							width: 600,
+							closePadding: 15,
+							modal: true,
+							disableScroll: true,
+							openDelay: 3,
+							openCallback: function pushWindowOpened () { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ 'event': 'Window_Open', 'id': 'myWindow_8' }); },
+							closeCallback: function pushWindowClosed () { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ 'event': 'Window_Close', 'id': 'myWindow_8' }); }
+						});
+
+						$("#myWindow_8 .mad-window-actionButton").click(function () {
+							window.dataLayer = window.dataLayer || []; window.dataLayer.push({ 'event': 'Window_Click', 'id': 'myWindow_8' });
+							// Navigate to another page, perform some call-to-action, etc.
+							$("#myWindow_8").madWindow("close");
+						});
+
+					});
+				</script>
+
+			</div>
+
+			<!--// Example_9 //-->
+			<div>
+
+				<p>
+					<b>Bound Content with 6s Open Delay and Behavior</b><br>
+					Theme: Default with local 'lightbox' styles and scripts, Behavior: bottomCenter, Modal with scrolling disabled, ExpireDays: 30, Callbacks: GA Event Tracking.<br>
+					(Note: <span class="link" onclick="clearCookie('mad-cookie_9');">Clear the cookie</span> to reopen the dismissed window.)
+				</p>
+
+				<div id="myWindow_9" class="mad-window" style="display: none">
+					<div class="mad-window-closebox"></div>
+					<div class="container">
+						<div class="row">
+							<p class="headline">Aenean nec turpis neque.</p>
+							<p>Aliquam a enim felis. Mauris eleifend ipsum vel felis suscipit et rhoncus turpis tristique.</p>
+							<div class="mad-window-actionButton">Call to Action</div>
+						</div>
+					</div>
+				</div>
+
+				<style>
+					#myWindow_9.mad-window p
+					{
+						font-size: 1em;
+						margin: 0 30% 25px 10px;
+					}
+					#myWindow_9.mad-window p.headline
+					{
+						font-size: 2.5em;
+						font-weight: bold;
+						line-height: .9;
+						margin: 0 10px 10px 10px;
+					}
+				</style>
+
+				<script>
+					jQuery(document).ready(function ($) {
+
+						$("#myWindow_9").madWindow("open",
+						{
+							theme: "default hanging-close",
+							behavior: "bottomCenter",
+							cookieName: "mad-cookie_9",
+							expireDays: 30,
+							width: 600,
+							closePadding: 15,
+							modal: true,
+							disableScroll: true,
+							openDelay: 6,
+							openCallback: function pushWindowOpened () { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ 'event': 'Window_Open', 'id': 'myWindow_9' }); },
+							closeCallback: function pushWindowClosed () { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ 'event': 'Window_Close', 'id': 'myWindow_9' }); }
+						});
+
+						$("#myWindow_9 .mad-window-actionButton").click(function () {
+							window.dataLayer = window.dataLayer || []; window.dataLayer.push({ 'event': 'Window_Click', 'id': 'myWindow_9' });
+							// Navigate to another page, perform some call-to-action, etc.
+							$("#myWindow_9").madWindow("close");
 						});
 
 					});
@@ -471,7 +599,7 @@
 
 		</div>
 
-		<p style="margin-top: 100px; border-top: 1px solid #000; padding-top: 5px">Copyright &copy; 2020 - Brian P. Mucha</p>
+		<p style="margin-top: 100px; border-top: 1px solid #000; padding-top: 5px">Copyright &copy; 2021 - Brian P. Mucha</p>
 
 		<style>
 
@@ -488,9 +616,9 @@
 		</style>
 
 		<script>
-			function clearCookie()
+			function clearCookie(cookieName)
 			{
-				document.cookie='mad-cookie_7=Hide; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/'
+				document.cookie= cookieName + '=Hide; expires=Thu, 01 Jan 1970 00:00:00 UTC; SameSite=Lax; path=/'
 				$(window).madWindow("open",
 				{
 					messageTitle: "Cookie Cleared!",
