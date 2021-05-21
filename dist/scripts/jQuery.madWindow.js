@@ -2,12 +2,12 @@
 *
 *	jQuery.madWindow
 *	----------------------
-*	version: 1.0.2
-*	date: 2021/05/11
+*	version: 1.0.4
+*	date: 2021/05/21
 *	license: GPL-3.0-or-later
-*	copyright (C) 2020 Brian Patrick Mucha
+*	copyright (C) 2021 Brian Patrick Mucha
 *
-*	This lightweight (8.47k) plugin provides robust messaging windows for
+*	This lightweight (8.532 KB) plugin provides robust messaging windows for
 *	alerts, dialogs, lightboxes and more. It includes an assortment of
 *	behaviors to control the open, display and close functionality,
 *	and extensable themes to change the appearance.
@@ -79,6 +79,9 @@
 *	closeCallback: function() {}
 *	A function to execute upon notice close.
 *
+*	hiddenCallback: function() {}
+*	A function to execute if the window has been hidden by the cookie.
+*
 \**********************************************************************/
 
 (function ($) {
@@ -108,7 +111,8 @@
 		openDelay: 0,
 		closeTimeout: 0,
 		openCallback: function() {},
-		closeCallback: function() {}
+		closeCallback: function() {},
+		hiddenCallback: function() {}
 	};
 
 	var methods = {
@@ -164,8 +168,12 @@
 
 				// Open the window.
 				var shouldHide = utilities.readCookie( settings.cookieName );
-				if (shouldHide != "Hide")
+				if (shouldHide == "Hide")
 				{
+					if (typeof settings.hiddenCallback == "function") {
+						settings.hiddenCallback.call(windowObj);
+					}
+				} else {
 					var noticeTimer = $.isNumeric(settings.openDelay) ? settings.openDelay : 0;
 					setTimeout(function(){ handlers.doOpen(windowObj) }, noticeTimer * 1000);
 				}
