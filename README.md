@@ -1,6 +1,6 @@
 # jQuery.madWindow
 
-This lightweight (8.46 KB) plugin provides robust messaging windows for alerts, dialogs, lightboxes and more. It includes an assortment of behaviors to control the open, display and close functionality, and extensible themes to change the appearance.
+This lightweight (8.532 KB) plugin provides robust messaging windows for alerts, dialogs, lightboxes and more. It includes an assortment of behaviors to control the open, display and close functionality, and extensible themes to change the appearance.
 
 The content can be passed for simple message windows, or madWindow can be bound to an existing DIV for complex lightboxes, videos, or web-forms.
 
@@ -51,3 +51,4 @@ Option | Description
 **closeTimeout**: 0 | Number of seconds until an open notice closes itself.
 **openCallback**: function() {} | A function to execute upon notice open.
 **closeCallback**: function() {} | A function to execute upon notice close. 
+**hiddenCallback**: function() {} | A function to execute if the window has been hidden by the cookie. 
