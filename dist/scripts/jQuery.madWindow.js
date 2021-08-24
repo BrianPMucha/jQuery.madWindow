@@ -2,8 +2,8 @@
 *
 *	jQuery.madWindow
 *	----------------------
-*	version: 1.0.4
-*	date: 2021/05/21
+*	version: 1.0.5
+*	date: 2021/08/24
 *	license: GPL-3.0-or-later
 *	copyright (C) 2021 Brian Patrick Mucha
 *
@@ -80,7 +80,7 @@
 *	A function to execute upon notice close.
 *
 *	hiddenCallback: function() {}
-*	A function to execute if the window has been hidden by the cookie.
+*	A function to execute if the dialog has been hidden by the cookie.
 *
 \**********************************************************************/
 
@@ -393,8 +393,8 @@
 		autoCenter: function (operation, windowObj, callback) {
 
 			$(windowObj).css("width", utilities.setWidth(settings));
-			var noticeTop = ( ($(window).height() - $(windowObj).outerHeight()) / 2);
-			var noticeLeft = ( ($(window).width() - $(windowObj).outerWidth()) / 2);
+			var noticeTop = ( ($(window).height() - $(windowObj).outerHeight(false)) / 2);
+			var noticeLeft = ( ($(window).width() - $(windowObj).outerWidth(false)) / 2);
 
 			switch (operation)
 			{
@@ -434,8 +434,8 @@
 		bottomCenter: function (operation, windowObj, callback) {
 
 			$(windowObj).css("width", utilities.setWidth(settings));
-			var noticeBottom = ( $(windowObj).outerHeight() + 30 ) * -1;
-			var noticeLeft = ( ($(window).width() - $(windowObj).outerWidth()) / 2);
+			var noticeBottom = ( $(windowObj).outerHeight(false) + 30 ) * -1;
+			var noticeLeft = ( ($(window).width() - $(windowObj).outerWidth(false)) / 2);
 
 			switch (operation)
 			{
@@ -479,8 +479,8 @@
 		topRight: function (operation, windowObj, callback) {
 
 			$(windowObj).css("width", utilities.setWidth(settings));
-			var noticeBottom = ( $(windowObj).outerHeight() + 30 ) * -1;
-			var noticeRight = ( ($(windowObj).outerWidth()) + 30) * -1;
+			var noticeBottom = ( $(windowObj).outerHeight(false) + 30 ) * -1;
+			var noticeRight = ( ($(windowObj).outerWidth(false)) + 30) * -1;
 
 			switch (operation)
 			{
@@ -523,8 +523,8 @@
 		bottomRight: function (operation, windowObj, callback) {
 
 			$(windowObj).css("width", utilities.setWidth(settings));
-			var noticeBottom = ( $(windowObj).outerHeight() + 30 ) * -1;
-			var noticeRight = ( ($(windowObj).outerWidth()) + 30) * -1;
+			var noticeBottom = ( $(windowObj).outerHeight(false) + 30 ) * -1;
+			var noticeRight = ( ($(windowObj).outerWidth(false)) + 30) * -1;
 
 			switch (operation)
 			{
@@ -567,8 +567,8 @@
 		topLeft: function (operation, windowObj, callback) {
 
 			$(windowObj).css("width", utilities.setWidth(settings));
-			var noticeBottom = ( $(windowObj).outerHeight() + 30 ) * -1;
-			var noticeLeft = ( ($(windowObj).outerWidth()) + 30) * -1;
+			var noticeBottom = ( $(windowObj).outerHeight(false) + 30 ) * -1;
+			var noticeLeft = ( ($(windowObj).outerWidth(false)) + 30) * -1;
 
 			switch (operation)
 			{
@@ -611,8 +611,8 @@
 		bottomLeft: function (operation, windowObj, callback) {
 
 			$(windowObj).css("width", utilities.setWidth(settings));
-			var noticeBottom = ( $(windowObj).outerHeight() + 30 ) * -1;
-			var noticeLeft = ( ($(windowObj).outerWidth()) + 30) * -1;
+			var noticeBottom = ( $(windowObj).outerHeight(false) + 30 ) * -1;
+			var noticeLeft = ( ($(windowObj).outerWidth(false)) + 30) * -1;
 
 			switch (operation)
 			{
