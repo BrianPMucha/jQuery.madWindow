@@ -2,8 +2,8 @@
 *
 *	jQuery.madWindow
 *	----------------------
-*	version: 1.0.5
-*	date: 2021/08/24
+*	version: 1.0.6
+*	date: 2021/09/08
 *	license: GPL-3.0-or-later
 *	copyright (C) 2021 Brian Patrick Mucha
 *
@@ -39,6 +39,9 @@
 *
 *	cookieName: "mad-cookie"
 *	The identifier used for the cookie used to record a dismissed window.
+*
+*	cookieDomain: null
+*	The domain that can access the cookie used to record a dismissed window.
 *
 *	expireDays: 0
 *	The number of days that the dismissed window cookie persists.
@@ -99,6 +102,7 @@
 		theme: "default",
 		behavior: "autoCenter",
 		cookieName: "mad-cookie",
+		cookieDomain: null,
 		expireDays: 0,
 		width: 400,
 		closePadding: 0,
@@ -335,7 +339,7 @@
 			// Store Dismissed Cookie
 			if (settings.expireDays)
 			{
-				utilities.createCookie(settings.cookieName,"Hide", settings.expireDays);
+				utilities.createCookie(settings.cookieName, settings.cookieDomain, "Hide", settings.expireDays);
 			}
 
 			// Execute Callback.
@@ -668,16 +672,18 @@
 			}
 		},
 
-		createCookie: function(name, value, days)
+		createCookie: function(name, domain, value, days)
 		{
+			var params = "";
+			if (domain) {
+				params += "; domain=" + domain;
+			}
 			if (days) {
 				var date = new Date();
 				date.setTime(date.getTime() + (days*24*60*60*1000));
-				var expires = "; expires=" + date.toGMTString();
-			} else {
-				var expires = "";
+				params += "; expires=" + date.toGMTString();
 			}
-			document.cookie = name + "=" + value + expires + "; SameSite=Lax; path=/";
+			document.cookie = name + "=" + value + params + "; SameSite=Lax; path=/";
 		},
 
 		readCookie: function(name)
