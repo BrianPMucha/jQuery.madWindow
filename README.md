@@ -38,6 +38,7 @@ Option | Description
 **theme**: "default" | Premade packages to customize the look and feel of the window.
 **behavior**: "autoCenter" | Used to customize the open, display and close animations.
 **cookieName**: "mad-cookie" | The identifier used for the cookie used to record a dismissed window.
+**cookieDomain**: null | The domain that can access the cookie used to record a dismissed window.
 **expireDays**: 0 | The number of days that the dismissed window cookie persists.
 **width**: 400 | The maximum width of the notice.
 **closePadding**: 0 | Extra space left of the notice to accomodate a hanging closebox.
